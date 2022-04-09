@@ -1,0 +1,42 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(20, 20, 20);;
+}
+.logo1{
+    border-radius: 50px;
+    margin-left: 20px;
+    filter: grayscale();
+}
+.logo1:hover{ filter: brightness();
+
+}
+.topNav{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color:rgb(20, 20, 20);
+    color: white;
+    font-size: 20px;
+    width: 65%;
+    
+}
+.topNav button{
+    font-size: 20px;
+}
+.homeLink{
+    color: goldenrod;
+    font-size: 24px;
+
+}
+
+
+@media screen and (max-width:980px) {
+    .logo1 {display:none}
+    .topNav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+}

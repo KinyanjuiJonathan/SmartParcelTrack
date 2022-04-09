@@ -1,0 +1,29 @@
+.NewAddress{
+    background-color: black;
+    color: white;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.NewAddress2{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 80%;
+    padding: 20px;
+    font-size: 28px;
+    text-align: start;
+}
+.NewAddress2 input{
+    font-size: 24px;
+    
+}
+.NewAddress button{
+    font-size: 24px;
+}
+.buttons{
+    display: flex;
+    gap: 20%;
+    margin-top:20px ;
+}

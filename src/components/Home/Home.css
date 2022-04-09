@@ -1,0 +1,70 @@
+.MainFrame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 24px; 
+}
+ button:hover{
+    background-color: goldenrod;
+    border-radius: 30px;
+   
+}
+input:hover{
+    background-color: rgb(196, 185, 185);
+}
+.MainFrame button{
+    height: 40px;
+    padding: 20px ;
+    font-size: 20px
+}
+.Frame1{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    border-radius: 5px;
+    background-repeat:no-repeat;
+
+    
+    
+}
+.photo{
+    height: 350px;
+    width: 600px;
+    border-radius: 30px;
+    margin-top: 20px;
+    filter: grayscale(rgb(37, 10, 49));
+}
+
+.back{
+    text-align:start ;
+    border-radius: 50px; 
+}
+.frameCover {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.frameCover button{
+    display: flex;
+    align-items: center;
+}
+
+.Frame3{
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* For mobile phones: */
+@media screen and (max-width:980px){
+.Frame1{
+    display: contents;
+}
+
+}
+    

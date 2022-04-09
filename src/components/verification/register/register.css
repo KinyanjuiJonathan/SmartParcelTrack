@@ -1,0 +1,70 @@
+.top{
+    background-color: black;
+}
+.mainregister{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    font-size: 26px;
+}
+.mainregister input{
+    font-size: 22px;
+    border-radius: 5%;
+    
+}
+.mainregister button{
+    font-size: 22px;
+    border-radius: 5%;
+}
+
+.register{
+    padding:5px 20px;
+    background-color:black;
+    width:fit-content;
+    color:white;
+    height: 85vh;
+    
+}
+   
+.register fieldset
+{
+    margin:20px ;
+    background-color: beige;
+    color: black;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    
+}
+.names{
+    display: flex;
+    gap: 20px;
+}
+.registeremail{
+    display: flex;
+    gap:20px;
+}
+.password{
+    display: flex;
+    gap:20px
+}
+@media screen and (max-width: 980px) {
+.names{
+    display: flex;
+    flex-direction: column;
+}
+.registeremail{
+    display: flex;
+    flex-direction: column;
+}
+.password{
+    display: flex;
+    flex-direction: column;
+}
+.register{
+    height: fit-content;
+}
+}

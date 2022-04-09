@@ -1,0 +1,29 @@
+.footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(20, 20, 20);
+    color: white;
+    font-size: 20px;
+}
+.social{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+@media screen and (max-width:980px){
+.footer{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.firstInner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.social{
+    width: 50%;
+    
+}
+    
+}
