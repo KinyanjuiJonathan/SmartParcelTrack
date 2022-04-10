@@ -4,46 +4,40 @@ const config = require('../config/db')
 const { v4: uuidv4 } = require('uuid');
 
 async function add_parcel (req,res){
-    const{parcel_id,customer_id,parcel_description,sending_No,recieving_No,startlocation,endlocation,isAdmin ,isDelete,isSent,isDelivered,currentlocation} = req.body
+    const{parcel_id,customer_username,parcel_description,startlocation,endlocation} = req.body
     try{
         let pool = await mssql.connect(config)
         await pool.request()
         .input('parcel_id', uuidv4(parcel_id))
-        .input('customer_id',customer_id)
+        .input('customer_username',customer_username)
         .input('parcel_description', parcel_description)
-        .input('sending_No', sending_No)
-        .input('recieving_No', recieving_No)
         .input('startlocation',  startlocation)
         .input('endlocation', endlocation)
-        .input('isDelete', isDelete)
-        .input('isSent', isSent)
-        .input('isDelivered', isDelivered)
-        .input('currentlocation',currentlocation)
         .execute("add_Parcel")
         res.json("Parcel added successfully")
+    } catch (err){
+        console.log(err);
+    }
+}
 
-    } catch (err){
-        console.log(err);
-    }
-}
-async function select_parcels (req,res){
-    try{
-        const pool = await mssql.connect(config)
-        const result = await pool.request()
-        .execute("select_Parcels")
-        res.json(result.recordset)
-    } catch (err){
-        console.log(err);
-    }
-}
-async function select_parcel (req,res){
-    const parcel_id = req.params.parcel_id
+// async function get_parcels (req,res){
+//     try{
+//         const pool = await mssql.connect(config)
+//         const result = await pool.request()
+//         .execute("select_Parcels")
+//         res.json(result.recordset)
+//     } catch (err){
+//         console.log(err);
+//     }
+// }
+async function get_Parcels (req,res){
+    const customer_username = req.params.customer_username
     
     try{
         let pool = await mssql.connect(config)
         const result1 = await pool.request()
-        .input('parcel_id',  mssql.VarChar, parcel_id)
-        .execute("select_Parcel")
+        .input('customer_username',  mssql.VarChar, customer_username)
+        .execute("select_parcels")
         res.json(result1.recordset)
 
     } catch (err){
@@ -52,13 +46,12 @@ async function select_parcel (req,res){
 }
 
 async function update_parcel (req,res){
-    const{customer_id,parcel_description,sending_No,recieving_No,startlocation,endlocation,currentLocation,isDelivered} = req.body
+    const{parcel_description,sending_No,recieving_No,startlocation,endlocation,currentLocation,isDelivered} = req.body
     const parcel_id = req.params.id
     try{
         let pool = await mssql.connect(config)
         await pool.request()
         .input('parcel_id', mssql.VarChar, parcel_id)
-        .input('customer_id', customer_id)
         .input('parcel_description', parcel_description)
         .input('sending_No',  sending_No)
         .input('recieving_No',  recieving_No)
@@ -90,8 +83,7 @@ async function delete_parcel (req,res){
 
 module.exports = {
     add_parcel,
-    select_parcels,
-    select_parcel,
+    get_Parcels,
     update_parcel,
     delete_parcel
 }

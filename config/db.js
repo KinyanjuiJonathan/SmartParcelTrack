@@ -25,3 +25,5 @@ mssql.connect(config).then(pool =>{
         console.log("connected");
     }
 }).catch(e=> console.log(e))
+
+
