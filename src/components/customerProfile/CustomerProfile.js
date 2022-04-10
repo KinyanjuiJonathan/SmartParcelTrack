@@ -25,9 +25,9 @@ const CustomerProfile=()=> {
     //   .catch((err) => {
     //   }))
      }
-    //  if (isLoggedIn){
-    //      dispatch(get_Parcels(customer_username))
-    //  }
+     if (isLoggedIn){
+         dispatch(get_Parcels(customer_username))
+     }
      
     
 

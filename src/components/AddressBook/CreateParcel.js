@@ -30,7 +30,7 @@ const CreateParcel=()=> {
     const formValid = customer_username&& parcel_description && startlocation && endlocation
         if (!formValid) {
           return; }
-        setParcels((parcels) => [...parcels,{id: uuidv4, customer_username:customer_username, parcel_description, startlocation,endlocation } ]);
+        setParcels((parcels) => [...parcels,{id: uuidv4, customer_username, parcel_description, startlocation,endlocation } ]);
       };
 
   const deleteParcel = (index) => {
@@ -56,12 +56,12 @@ const CreateParcel=()=> {
       <form onSubmit={addParcel}>
         <h1><FaAddressBook size='80px'/> Enter your Data to update your Address-Book</h1>
         <div className='NewAddress2'>
-          {/* <div>
+          <div>
             <label>customer_username<br></br></label>
             <input
                name="customer_username" value={parcel.customer_username} onChange={(e) => setParcel((parcel) => ({ ...parcel, customer_username: e.target.value }))}
             />
-          </div> */}
+          </div>
           <div>
             <label>Parcel description<br></br></label>
             <input
