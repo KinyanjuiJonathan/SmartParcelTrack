@@ -9,7 +9,6 @@ import { getParcel, get_Parcels } from '../Redux/Actions/ParcelAction';
 import { useDispatch} from "react-redux";
 
 
-
 const CustomerProfile=()=> {
      const navigate = useNavigate();
      const dispatch= useDispatch();
@@ -25,9 +24,9 @@ const CustomerProfile=()=> {
     //   .catch((err) => {
     //   }))
      }
-     if (isLoggedIn){
-         dispatch(get_Parcels(customer_username))
-     }
+    //  if (isLoggedIn){
+    //      dispatch(get_Parcels(customer_username))
+    //  }
      
     
 
@@ -69,7 +68,7 @@ const CustomerProfile=()=> {
                 </div>
                 <div className='Cont'><BiShoppingBag/>shipped</div>
                 <div className='Cont'><BiRevision/>To be reviewed</div>
-                <div className='Cont'><BiRefresh/> refund/atersale</div>
+                <div className='Cont'><BiRefresh/> refund/aftersale</div>
             </div>
             <div className='Container3'>
                 <div>
@@ -97,7 +96,7 @@ const CustomerProfile=()=> {
                 <div className='Container4bottom'>
                     <Link to ='/CreateParcel'><a href=''><button>create Parcel</button></a></Link>
                     <Link to='/UpdatedAddress'><a href=''><button>View your Details</button></a></Link>
-                    <a href=''><button>Frequently asked question</button></a>
+                    <a href=''><button>Frequently asked question</button></a> 
                 </div>
             </div>
         </div>

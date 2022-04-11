@@ -1,6 +1,4 @@
 import axios from 'axios'
-
-
 const API_URL = "http://localhost:5000/parcels/"
 
 
@@ -14,6 +12,8 @@ const createParcel = (
 }
 
 const get_Parcels = (customer_username) => {
+    console.log(customer_username);
+    console.log("parcelSErvice");
 
     return axios
     .get(API_URL  ,{

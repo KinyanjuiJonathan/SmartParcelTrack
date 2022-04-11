@@ -69,30 +69,30 @@ import {
       }
     )
   }
-//   export const get_Parcels = (customer_username) => (dispatch) => {
-//     return parcelServices.get_Parcels(customer_username).then(
-//       (data) => {
-//           dispatch({
-//               type:PARCEL_GET_SUCCESS,
-//                 payload: { parcel: data },
-//           });
-//           return Promise.resolve();
-//       },
-//       (error) => {
-//           const message = 
-//               (error.response &&
-//               error.response.data &&
-//               error.response.data.message) ||
-//               error.message ||
-//               error.toString()
-//           dispatch({
-//               type: PARCEL_GET_FAIL,
-//           });
-//           dispatch({
-//               type: SET_MESSAGE,
-//               payload: message,
-//           })
-//           return Promise.reject()
-//       }
-//     )
-//   }
+  export const get_Parcels = (customer_username) => (dispatch) => {
+    return parcelServices.get_Parcels(customer_username).then(
+      (data) => {
+          dispatch({
+              type:PARCEL_GET_SUCCESS,
+                payload: { parcel: data },
+          });
+          return Promise.resolve();
+      },
+      (error) => {
+          const message = 
+              (error.response &&
+              error.response.data &&
+              error.response.data.message) ||
+              error.message ||
+              error.toString()
+          dispatch({
+              type: PARCEL_GET_FAIL,
+          });
+          dispatch({
+              type: SET_MESSAGE,
+              payload: message,
+          })
+          return Promise.reject()
+      }
+    )
+  }
