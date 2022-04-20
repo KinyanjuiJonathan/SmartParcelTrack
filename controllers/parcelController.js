@@ -30,22 +30,22 @@ async function get_parcel (req,res){
         console.log(err);
     }
 }
-// async function get_Parcels (req,res){
-//     const customer_username = req.params.customer_username
+async function get_Parcels (req,res){
+    const customer_username = req.params.customer_username
     
-//     try{
-//         let pool = await mssql.connect(config)
-//         const result1 = await pool.request()
-//         .input('customer_username', customer_username)
-//         .execute("select_parcels")
-// console.log('getparcels');
-//         res.json(result1.recordset)
-//         console.log(result1);
+    try{
+        let pool = await mssql.connect(config)
+        const result1 = await pool.request()
+        .input('customer_username', customer_username)
+        .execute("select_parcels")
+console.log('getparcels');
+        res.json(result1.recordset)
+        console.log(result1);
 
-//     } catch (err){
-//         console.log(err);
-//     }
-// }
+    } catch (err){
+        console.log(err);
+    }
+}
 
 async function update_parcel (req,res){
     const{parcel_description,sending_No,recieving_No,startlocation,endlocation,currentLocation,isDelivered} = req.body
