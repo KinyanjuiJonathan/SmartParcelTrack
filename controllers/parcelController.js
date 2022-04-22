@@ -20,30 +20,32 @@ async function add_parcel (req,res){
     }
 }
 
-async function get_parcel (req,res){
-    try{
-        const pool = await mssql.connect(config)
-        const result = await pool.request()
-        .execute("select_Parcels")
-        res.json(result.recordset)
-    } catch (err){
-        console.log(err);
-    }
-}
+// async function get_parcel (req,res){
+//     try{
+//         const pool = await mssql.connect(config)
+//         const result = await pool.request()
+//         .execute("select_Parcels")
+//         res.json(result.recordset)
+//     } catch (err){
+//         console.log(err);
+//     }
+// }
 async function get_Parcels (req,res){
     const customer_username = req.body.customer_username
     
     try{
         let pool = await mssql.connect(config)
-        const result1 = await pool.request()
+        let {parcel} = await pool.request()
+
         .input('customer_username', customer_username)
         .execute("select_parcels")
-console.log('getparcels');
-        res.json(result1.recordset)
-        console.log(result1);
-
-    } catch (err){
-        console.log(err);
+        
+        res.json(parcel.parcels)
+        console.log(parcel);
+        console.log("parcels in parcel controller");
+    } 
+    catch (err){
+    console.log(err);
     }
 }
 

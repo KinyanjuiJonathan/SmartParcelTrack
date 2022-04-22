@@ -58,13 +58,11 @@ async function login_customer (req,res){
         let pool = await mssql.connect(config)
         let {recordset} = await pool.request()
         // .query(`select * from customer  where customer_username='${customer_username}'`)
-        .input('customer_username', customer_username)
-        .input('customer_pasword', customer_pasword)
-        .execute("login_customer")
-        const customer = recordset[0];
-        console.log(customer);
-        console.log(customer.customer_pasword);
 
+        .input('customer_username', customer_username)
+        .execute("login_customer")
+
+        const customer = recordset[0];
       
         if (!customer_username) res.status(400).send({Message:"user does not Exist"})
     
