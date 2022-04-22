@@ -57,10 +57,10 @@ async function login_customer (req,res){
         
         let pool = await mssql.connect(config)
         let {recordset} = await pool.request()
-        .query(`select * from customer  where customer_username='${customer_username}'`)
-        // .input('customer_username', customer_username)
-        // .input('customer_pasword', customer_pasword)
-        // .execute("login_customer")
+        // .query(`select * from customer  where customer_username='${customer_username}'`)
+        .input('customer_username', customer_username)
+        .input('customer_pasword', customer_pasword)
+        .execute("login_customer")
         const customer = recordset[0];
         console.log(customer);
         console.log(customer.customer_pasword);

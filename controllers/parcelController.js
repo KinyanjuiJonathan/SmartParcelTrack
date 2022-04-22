@@ -31,7 +31,7 @@ async function get_parcel (req,res){
     }
 }
 async function get_Parcels (req,res){
-    const customer_username = req.params.customer_username
+    const customer_username = req.body.customer_username
     
     try{
         let pool = await mssql.connect(config)
