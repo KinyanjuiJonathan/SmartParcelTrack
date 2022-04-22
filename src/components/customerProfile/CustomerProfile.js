@@ -5,8 +5,8 @@ import '../customerProfile/customerProfile.css'
 import { useNavigate, Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import { useSelector } from 'react-redux';
-import { getParcel, get_Parcels } from '../Redux/Actions/ParcelAction';
 import { useDispatch} from "react-redux";
+import { get_Parcels } from '../Redux/Actions/ParcelAction';
 
 
 const CustomerProfile=()=> {
@@ -24,9 +24,9 @@ const CustomerProfile=()=> {
     //   .catch((err) => {
     //   }))
      }
-    //  if (isLoggedIn){
-    //      dispatch(get_Parcels(customer_username))
-    //  }
+     if (isLoggedIn){
+         dispatch(get_Parcels(customer_username))
+     }
      
     
 

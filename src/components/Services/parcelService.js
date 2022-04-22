@@ -13,8 +13,7 @@ const createParcel = (
 
 const get_Parcels = (customer_username) => {
     console.log(customer_username);
-    console.log("parcelSErvice");
-
+    
     return axios
     .get(API_URL  ,{
         customer_username

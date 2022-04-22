@@ -5,13 +5,14 @@ import '../AddressBook/CreateParcel.css'
 import Header from '../Header/Header';
 import { useDispatch} from "react-redux";
 import {createParcel} from '../Redux/Actions/ParcelAction'
-import { Link } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 
 
 const CreateParcel=()=> {
 
   const dispatch=useDispatch();
+  const navigate=useNavigate();
 
   const [parcel, setParcel] = useState({
     customer_username:"",
@@ -41,9 +42,9 @@ const CreateParcel=()=> {
     e.preventDefault();
     dispatch(createParcel(parcel))
 
-  //   .then(() => {
-  //    navigate('/CustomerProfile')
-  //  })
+    .then(() => {
+     navigate('/CustomerProfile')
+   })
    .catch((err) => {
    })
       };
