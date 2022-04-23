@@ -10,8 +10,8 @@ import { get_Parcels } from '../Redux/Actions/ParcelAction';
 
 
 const CustomerProfile=()=> {
-     const navigate = useNavigate();
-     const dispatch= useDispatch();
+    //  const navigate = useNavigate();
+    //  const dispatch= useDispatch();
 
      const {parcel}=useSelector((state) => state.parcelReducer);
      const { customer:currentcustomer, isLoggedIn } = useSelector((state) => state.customerReducer);
