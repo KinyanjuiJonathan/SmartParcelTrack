@@ -19,10 +19,10 @@ const CustomerProfile=()=> {
 
       if (!currentcustomer) {
       return navigate ("/login") 
-    //   .then(dispatch(get_Parcels(currentcustomer.customer.customer_username))
-    //   console.log();
-    //   .catch((err) => {
-    //   }))
+      .then(dispatch(get_Parcels(currentcustomer.customer.customer_username))
+      console.log();
+      .catch((err) => {
+      }))
      }
      if (isLoggedIn){
          dispatch(get_Parcels(customer_username))
